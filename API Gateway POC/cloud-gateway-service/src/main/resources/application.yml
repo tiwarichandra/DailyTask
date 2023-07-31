@@ -1,0 +1,28 @@
+
+
+
+server:
+  port: 9090
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: firstModule
+          uri: lb://FIRST-SERVICE
+          predicates:
+            - Path=/first/**
+        - id: secondModule
+          uri: lb://SECOND-SERVICE
+          predicates:
+            - Path=/second/**
+        - id: backendModule
+          uri: lb://BACKEND-SERVICE
+          predicates:
+            - Path=/api/v1/**
+  application:
+    name: API-GATEWAY
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${DISCOVERY_URL:http://localhost:8761}/eureka/

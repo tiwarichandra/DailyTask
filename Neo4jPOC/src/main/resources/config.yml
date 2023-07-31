@@ -1,0 +1,21 @@
+#server:
+#  port: 8080
+#
+#spring:
+#    data:
+#      neo4j:
+#    uri: bolt://127.0.0.1:7687
+#    authentication:
+#      username: My-DataBase
+#      password: bitnami1
+#      database: mydb
+##      port: 7687
+##      scheme: none
+#
+#logging:
+#  level:
+#    org.springframework.data.neo4j: DEBUG
+#
+#dbms:
+#  security:
+#    auth_enabled: false
